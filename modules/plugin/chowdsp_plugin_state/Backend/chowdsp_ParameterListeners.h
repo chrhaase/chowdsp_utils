@@ -8,10 +8,11 @@ JUCE_END_IGNORE_WARNINGS_GCC_LIKE
 #include "../../../common/chowdsp_core/JUCEHelpers/juce_FixedSizeFunction.h"
 #endif
 
+
 #if JUCE_MODULE_AVAILABLE_chowdsp_dsp_data_structures
 #include <chowdsp_dsp_data_structures/chowdsp_dsp_data_structures.h>
 #else
-#include "../../../dsp/chowdsp_dsp_data_structures/third_party/moodycamel/readerwriterqueue.h"
+#include <readerwriterqueue.h>
 #endif
 
 namespace chowdsp
