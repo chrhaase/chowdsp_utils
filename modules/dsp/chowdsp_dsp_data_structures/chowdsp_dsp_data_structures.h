@@ -31,7 +31,16 @@ BEGIN_JUCE_MODULE_DECLARATION
 
 // third-party includes
 #if ! JUCE_TEENSY // readerwriterqueue does not compile with the Teensy toolchain
+
+#if __has_include(<readerwriterqueue.h>)
+#include <readerwriterqueue.h>
+#else
 #include "third_party/moodycamel/readerwriterqueue.h"
+#endif
+
+#if __has_include(<readerwriterqueue.h>)
+#include <readerwriterqueue.h>
+#else
 #include "third_party/moodycamel/concurrentqueue.h"
 #endif
 

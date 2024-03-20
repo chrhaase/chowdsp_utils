@@ -10,6 +10,8 @@ JUCE_END_IGNORE_WARNINGS_GCC_LIKE
 
 #if JUCE_MODULE_AVAILABLE_chowdsp_dsp_data_structures
 #include <chowdsp_dsp_data_structures/chowdsp_dsp_data_structures.h>
+#elif __has_include(<readerwriterqueue.h>)
+#include <readerwriterqueue.h>
 #else
 #include "../../../dsp/chowdsp_dsp_data_structures/third_party/moodycamel/readerwriterqueue.h"
 #endif
