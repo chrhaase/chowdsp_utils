@@ -38,8 +38,8 @@ BEGIN_JUCE_MODULE_DECLARATION
 #include "third_party/moodycamel/readerwriterqueue.h"
 #endif
 
-#if __has_include(<readerwriterqueue.h>)
-#include <readerwriterqueue.h>
+#if __has_include(<concurrentqueue.h>)
+#include <concurrentqueue.h>
 #else
 #include "third_party/moodycamel/concurrentqueue.h"
 #endif
