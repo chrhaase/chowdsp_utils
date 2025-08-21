@@ -13,6 +13,13 @@ PluginStateImpl<ParameterState, NonParameterState, Serializer>::PluginStateImpl 
 }
 
 template <typename ParameterState, typename NonParameterState, typename Serializer>
+PluginStateImpl<ParameterState, NonParameterState, Serializer>::~PluginStateImpl()
+{
+    // Otherwise the listeners won't be deleted until after the parameters themselves.
+    listeners.reset();
+}
+
+template <typename ParameterState, typename NonParameterState, typename Serializer>
 void PluginStateImpl<ParameterState, NonParameterState, Serializer>::serialize (juce::MemoryBlock& data) const
 {
     Serialization::serialize<Serializer> (*this, data);
