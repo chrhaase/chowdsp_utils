@@ -90,7 +90,7 @@ private:
 
 namespace version_literals
 {
-    constexpr Version operator"" _v (const char* str, size_t len) noexcept
+    constexpr Version operator""_v (const char* str, size_t len) noexcept
     {
         return Version { std::string_view (str, len) };
     }
